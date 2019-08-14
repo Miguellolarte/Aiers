@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!-- was: <?xml version="1.0" encoding="UTF-8"?> -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+    <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
+
+    <!--
+    Most controllers will use the ControllerClassNameHandlerMapping above, but
+    for the index controller we are using ParameterizableViewController, so we must
+    define an explicit mapping for it.
+    -->
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="index.htm">homeController</prop>
+                <prop key="inicioUsuario.htm">inicioUsuarioController</prop>
+                <prop key="inicioServicio.htm">inicioServicioController</prop>
+                
+                <!--Usuario-->
+                
+                <prop key="indexUsuario.htm">UsuarioController</prop>
+                <prop key="AgregarUsuario.htm">UsuarioController</prop>
+                <prop key="editarUsuario.htm">UsuarioController</prop>
+                <prop key="deleteUsuario.htm">UsuarioController</prop>
+                
+                <!--TipoServicio-->
+                
+                <prop key="indexTipoServicio.htm">TipoServicioController</prop>
+                <prop key="AgregarTipoServicio.htm">TipoServicioController</prop>
+                <prop key="editarTipoServicio.htm">TipoServicioController</prop>
+                <prop key="deleteTipoServicio.htm">TipoServicioController</prop>
+                
+                <!--TipoServicio-->
+                
+                <prop key="indexMembresia.htm">MembresiaController</prop>
+                <prop key="AgregarMembresia.htm">MembresiaController</prop>
+                <prop key="editarMembresia.htm">MembresiaController</prop>
+                <prop key="deleteMembresia.htm">MembresiaController</prop>
+                
+                
+                 <!--Servicio-->
+                
+                <prop key="indexServicio.htm">ServicioController</prop>
+                <prop key="AgregarServicio.htm">ServicioController</prop>
+                <prop key="editarServicio.htm">ServicioController</prop>
+                <prop key="deleteServicio.htm">ServicioController</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/jsp/"
+          p:suffix=".jsp" />
+
+    <!--
+    The index controller.
+    -->
+    <bean name="homeController" class="Controller.homeController"/>
+    <bean name="inicioUsuarioController" class="Controller.inicioUsuarioController"/>
+    <bean name="inicioServicioController" class="Controller.inicioServicioController"/>
+    <bean name="UsuarioController" class="Controller.UsuarioController"/>
+    <bean name="TipoServicioController" class="Controller.TipoServicioController"/>
+    <bean name="MembresiaController" class="Controller.MembresiaController"/>
+    <bean name="ServicioController" class="Controller.ServicioController"/>
+</beans>

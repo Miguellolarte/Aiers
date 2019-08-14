@@ -1,0 +1,45 @@
+.card{
+    -webkit-box-shadow: 0px 0px 80px 36px rgba(255,255,255,1);
+    -moz-box-shadow: 0px 0px 80px 36px rgba(255,255,255,1);
+    box-shadow: 0px 0px 80px 36px rgba(255,255,255,1);
+
+}
+.clasificacion{
+    margin-left: 35%;
+}
+
+#form {
+    width: 250px;
+    height: 50px;
+    margin-left: 200%;
+  }
+  
+  #form p {
+    text-align: center;
+  }
+  
+  #form label {
+    font-size: 20px;
+  }
+  
+  input[type="radio"] {
+    display: none;
+  }
+  
+  label {
+    color: grey;
+  }
+  
+  .clasificacion {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+  }
+  
+  label:hover,
+  label:hover ~ label {
+    color: orange;
+  }
+  
+  input[type="radio"]:checked ~ label {
+    color: orange;
+  }

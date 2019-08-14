@@ -1,0 +1,33 @@
+
+.registro{
+width: 70%;
+height: 50%;
+margin: 0 auto;
+}
+.carta{
+margin-top: 10%;
+}
+
+
+.contraseña, .name{
+	width: 90%;
+	margin-top: 5%;
+	text-align: center;
+	margin-left: 5%;
+}
+
+.inicio{
+	margin-left: 5%;
+	margin-top: 5%;
+	width: 90%;
+}
+
+.registro{
+	width: 90%;
+	margin-top: 5%;
+	margin-left: 5%;
+}
+.desempleo{
+	font-size: 14px;
+	margin-top: 5%;
+}
